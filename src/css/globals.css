@@ -21,6 +21,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
 }
 .container{
   width: 100vw;
@@ -29,5 +30,16 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+
+
+@keyframes dropdown {
+  0%{
+    height: 0;
+
+  }100%{
+    height: auto;
   }
 }
