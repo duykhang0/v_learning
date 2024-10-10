@@ -21,11 +21,13 @@ function Header() {
             </div>
             <div className="menu flex  gap-4 font-semibold text-base">
 
-              <FlayoutLink href="#" title="Danh Mục" FlyoutContent icon={<MenuIcon/>} datas={datas}/>
-              <FlayoutLink href="#" title="Khóa Học" />
-              <a href="#">Blog</a>
-              <a href="#">Sự Kiện</a>
-              <a href="#">Thông Tin</a>
+              <FlayoutLink href="#" title="Danh Mục" FlyoutContent icon={<MenuIcon/>} childrenMenu={datas.danhmuc}/>
+              <FlayoutLink href="#" title="Khóa Học" FlyoutContent/>
+              <FlayoutLink href="#" title="Blog" FlyoutContent/>
+              <FlayoutLink href="#" title="Sự Kiện" FlyoutContent childrenMenu={datas.suKien}/>
+              <FlayoutLink href="#" title="Thông Tin" FlyoutContent/>
+
+             
             </div>
             <button className='bg-[#f6ba35] p-2 text-white text-sm font-medium hover:scale-95 transiton duration-300'>ĐĂNG NHẬP</button>
         </div>
