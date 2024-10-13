@@ -22,7 +22,7 @@ const FlayoutLink = (props) => {
                 <div className="absolute -top-6 left-0 right-0 h-6 bg-transparent"></div>
                 <div className="shadow-xl flex flex-col w-max   ">
                     {childrenMenu && childrenMenu.map((item) => {
-                      return (<a href="" className="bg-green-200 px-3 hover:bg-green-300 text-center">{item}</a>)
+                      return (<a href="" className="bg-green-300 px-3 hover:text-white text-center">{item}</a>)
                     })}
                 </div>
             </div>
