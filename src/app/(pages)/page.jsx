@@ -1,101 +1,190 @@
 import Image from "next/image";
 
+import "@/css/globals.css";
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <>
+      <div className="carousel">
+        <div className="container d-flex align-items-center ">
+          <div className="carousel_left w-100 ">
+            <h1 className="">Chào mừng </h1>
+            <h1 className="">đến với môi trường</h1>
+            <h1 className="vLearning">V learning</h1>
+            <button className=""> BẮT ĐẦU NÀO</button>
+          </div>
+          <div className="carousel_right ">
+            <img
+              className="nen  "
+              src="https://demo2.cybersoft.edu.vn/static/media/slider2.f170197b.png"
+              alt="hinhnencarousel"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="may_container">
+              <img
+                className="may1    "
+                width={100}
+                src="	https://demo2.cybersoft.edu.vn/static/media/clouds.15eb556c.png"
+                alt=""
+              />
+              <img
+                className="may2    "
+                width={200}
+                src="	https://demo2.cybersoft.edu.vn/static/media/clouds.15eb556c.png"
+                alt=""
+              />
+              <img
+                className="may3    "
+                width={100}
+                src="	https://demo2.cybersoft.edu.vn/static/media/clouds.15eb556c.png"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+      <div className="desc">
+        <div className="container">
+          <div className="khoaHoc editContent">
+            <div className="content">
+              <h3>KHÓA HỌC</h3>
+              <p>
+                <b>Học qua dự án thực tế</b>, học đi đôi với hành, không lý thuyết lan
+                man, phân tích cội nguồn của vấn đề, xây dựng từ các ví dụ nhỏ
+                đến thực thi một dự án lớn ngoài thực tế để học viên học xong
+                làm được ngay
+              </p>
+              <ul>
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  <span>Hơn 1000 bài tập và dự án thực tế</span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>Công nghệ cập nhật mới nhất</span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>Hình ảnh, ví dụ, bài giảng sinh động trực quan</span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>Tư duy phân tích, giải quyết vấn đề trong dự án</span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Học tập kinh nghiệm, qui trình làm dự án, các qui chuẩn
+                    trong dự án
+                  </span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Cơ hội thực tập tại các công ty lớn như FPT, Microsoft
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="loTrinh editContent">
+            <div class="content">
+              <h3>Lộ trình phù hợp</h3>
+              <ul>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Lộ trình bài bản từ zero tới chuyên nghiệp, nâng cao
+                  </span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Học, luyện tập code, kỹ thuật phân tích, soft skill
+                  </span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Huấn luyện để phát triển năng lực và niềm đam mê lập trình
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="heThong editContent">
+            <div class="content">
+              <h3>Hệ thống học tập</h3>
+              <ul>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Tự động chấm điểm trắc nghiệm và đưa câu hỏi tùy theo mức độ
+                    học viên
+                  </span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Thống kê lượt xem video, làm bài, điểm số theo chu kỳ
+                  </span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Thống kê, so sánh khả năng học của các học viên cùng level
+                    để đưa ra mục tiêu học tập
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="giangVien editContent">
+            <div class="content">
+              <h3>Giảng viên</h3>
+              <ul>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Tương tác cùng mentor và giảng viên qua phần thảo luận
+                  </span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>Review code và đưa ra các nhận xét góp ý</span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>Chấm điểm tương tác thảo luận giữa các học viên</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="chungNhan editContent">
+            <div class="content">
+              <h3>Chứng nhận</h3>
+              <ul>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>Chấm bài và có thể vấn đáp trực tuyến để review</span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Hệ thống của chúng tôi cũng tạo ra cho bạn một CV trực tuyến
+                    độc đáo
+                  </span>
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  <span>
+                    Kết nối CV của bạn đến với các đối tác của V learning
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
