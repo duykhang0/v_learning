@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: '#41b294',
+        primary_tailwind: '#41b294',
         sub: '#f6ba35'
       },
       textShadow: {

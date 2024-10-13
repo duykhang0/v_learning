@@ -16,15 +16,15 @@ function Footer() {
               <KeyboardIcon className='absolute ' />
             </a>
             <div className='flex items-center gap-2 font-semibold ml-4 w-max transform hover:-translate-y-1 transition duration-300'>
-                <LocalPhoneIcon className='bg-primary text-4xl p-2 rounded-full text-white ' />
+                <LocalPhoneIcon className='bg-primary_tailwind text-4xl p-2 rounded-full text-white ' />
                 1800-123-4567
             </div>
             <div className='flex items-center gap-2 font-semibold ml-4 w-max transform hover:-translate-y-1 transition duration-300'>
-              <ContactEmergencyIcon className='bg-primary text-4xl p-2 rounded-full text-white ' />
+              <ContactEmergencyIcon className='bg-primary_tailwind text-4xl p-2 rounded-full text-white ' />
               devit@gmail.com
             </div>
             <div className='flex items-center gap-2 font-semibold ml-4 w-max transform hover:-translate-y-1 transition duration-300' >
-              <PlaceIcon className='bg-primary text-4xl p-2 rounded-full text-white ' />
+              <PlaceIcon className='bg-primary_tailwind text-4xl p-2 rounded-full text-white ' />
               Việt Nam
             </div>
         </div>
@@ -49,9 +49,10 @@ function Footer() {
                 </div>
                 <div className='form_register flex flex-col gap-3'>
                     <h1 className='font-bold text-2xl'>Đăng Ký Tư Vấn </h1>
-                    <input type="text" placeholder='Họ và tên' className='border-2 border-primary rounded px-1 w-80 outline-primary '/>
-                    <input type="text" placeholder='Email' className='border-2 border-primary rounded px-1 w-80 outline-primary '/>
-                    <input type="text" placeholder='Số điện thoại' className='border-2 border-primary rounded px-1 w-80 outline-primary '/>
+                    <input type="text" placeholder='Họ và tên' className='border-2 border-primary_tailwind rounded px-1 w-80 outline-primary_tailwind '/>
+                    <input type="text" placeholder='Email' className='border-2 border-primary_tailwind rounded px-1 w-80 outline-primary_tailwind '/>
+
+                    <input type="text" placeholder='Số điện thoại' className='border-2 border-primary_tailwind rounded px-1 w-80 outline-primary_tailwind '/>
                     <button className='w-max bg-sub text-white px-2 py-1 text-base font-medium rounded'>Đăng ký</button>
                 </div>
             </div>

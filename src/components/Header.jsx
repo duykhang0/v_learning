@@ -36,17 +36,5 @@ function Header() {
 }
 
 
-// drop down menu
-// const FlayoutLink = (props) => {
-//   const [open,setOpen] = useState(false)
-//  const {title,href} = props
-//   return (
-//     <div className='relative h-fit w-fit' onMouseEnter={() =>setOpen(true)} onMouseLeave={() => setOpen(false)}>
-//       <a href={href} className='relative text-black'>
-//         {title}
-//         <span style={{transform:open ? "scaleX(1)" : "scaleX(0)"}} className='absolute -bottom-2 -left-2 -right-2 h-1 origin-left rounded-full bg-indigo-300 transition-transform duration-300 ease-in-out'></span>
-//       </a>
-//     </div>
-//   )
-// }
+
 export default Header

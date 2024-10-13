@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* bootstrap*/
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
+*{
+  text-decoration: none;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,7 +29,6 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
   
 }
 .container{
