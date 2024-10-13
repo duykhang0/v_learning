@@ -11,7 +11,7 @@ const FlayoutLink = (props) => {
       <div className='relative h-fit w-fit z-10' onMouseEnter={() =>setOpen(true)} onMouseLeave={() => setOpen(false)}>
         <div className="flex items-center gap-1"> 
             {icon ? icon : ""}
-            <Link href={href} className='relative text-black no-underline'>
+            <Link href={href} className='relative text-black no-underline text-xl'>
             {title}
             <span style={{transform: showFlyout ? "scaleX(1)" : "scaleX(0)"}} className='absolute -bottom-2 -left-2 -right-2 h-1 origin-left rounded-full bg-indigo-300 transition-transform duration-300 ease-in-out'></span>
             </Link>

@@ -1,3 +1,6 @@
+const { BorderColor, BorderRight } = require('@mui/icons-material');
+const { transform } = require('next/dist/build/swc');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -15,6 +18,36 @@ module.exports = {
       },
       textShadow: {
         custom: ' 6px -6px 5px rgba(65,178,148,0.87)'
+      },
+      animation : {
+        'caret':  'caret 0.4s linear infinite',
+        "typewriter": 'typewriter 3s steps(12) 1s infinite',
+        'cloud-move': 'floatRight 5s linear infinite',
+        "swing": 'swing 4s linear infinite',
+      },
+      keyframes: {
+        caret : {
+          '0%' : {borderColor: "transparent"},
+          '100%' : {borderColor: '#41b294'}
+        },
+        typewriter: {
+          '0%': { width: '0%' },
+          '100%': { width: '340px' },
+        },
+        floatRight: {
+          '0%': { transform: 'translateX(0)', opacity: '0' },  // Bắt đầu từ ngoài màn hình bên trái và ẩn
+          '10%': { opacity: '1' },  // Bắt đầu hiện ra
+          '90%': { opacity: '1' },  // Giữ nguyên độ rõ
+          '100%': { transform: 'translateX(100%)', opacity: '0' },  // Trôi sang phải và biến mất
+        },
+        swing: {
+          
+          '0%': { transform: 'rotate(0deg)', transformOrigin: 'bottom center' },
+          '25%': { transform: 'rotate(30deg)', transformOrigin: 'bottom center' },
+          '50%': { transform: 'rotate(0deg)', transformOrigin: 'bottom center' },
+          '75%': { transform: 'rotate(-30deg)', transformOrigin: 'bottom center' },
+          '100%': { transform: 'rotate(0deg)', transformOrigin: 'bottom center' },
+        },
       }
       
     },
