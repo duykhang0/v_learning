@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel {
+  .container {
+    .carousel_left {
+      h1 {
+        font-size: 65px;
+        font-weight: bold;
+      }
+      button {
+        background-color: rgb(246, 186, 53);
+        font-size: 15px;
+        padding: 15px 25px;
+        color: white;
+        font-weight: 600;
+        margin-top: 20px;
+      }
+      .vLearning{
+        color: rgb(65,178,148);
+        position: relative;
+        padding-bottom: 5px;
+
+      }
+      .vLearning::after{
+        content: "";
+        position: absolute;
+        left:  0;
+        height: 100%;
+        width: 100%;
+        /* border:  2px solid green; */
+        
+        animation: typing 2s steps(10) infinite;
+        background-color: white;
+        
+      }
+    }
+    .carousel_right {
+      position: relative;
+      .nen {
+      }
+      .may_container {
+        float: left;
+        margin-right: 10px; /* Khoảng cách giữa các ảnh */
+
+        .may1 {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateY(-50%); /* Căn giữa ảnh B theo chiều dọc */
+          width: 100px; /* Thay đổi kích thước tùy thích */
+          height: 100px;
+          animation: di-chuyen 5s linear infinite;
+        }
+        .may2 {
+          position: absolute;
+          top: 20px;
+          left: 0;
+          transform: translateY(-50%); /* Căn giữa ảnh B theo chiều dọc */
+          width: 100px; /* Thay đổi kích thước tùy thích */
+          height: 100px;
+          animation: di-chuyen 5s linear infinite;
+        }
+        .may3 {
+          position: absolute;
+          top: 40px;
+          left: 0;
+          transform: translateY(-50%); /* Căn giữa ảnh B theo chiều dọc */
+          width: 100px; /* Thay đổi kích thước tùy thích */
+          height: 100px;
+          padding: 5px 0;
+          animation: di-chuyen 5s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+.desc {
+  padding-bottom: 500px;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-gap: 20px;
+    color: aliceblue;
+   .editContent{
+        .content{
+          color: rebeccapurple;
+          padding: 20px 10px;
+             h3{
+                padding: 0 32px;
+                text-transform: uppercase;
+             }
+             p{
+              padding-left:  32px;
+
+             }
+            ul{
+              li{
+                color: #000;
+                margin: 10px 0;
+                i{
+                  margin-right: 10px;
+                  font-weight: bold;
+                }
+                span{}
+                
+             }
+            }
+        }
+   }
+    .khoaHoc {
+        grid-column: 1/span 1;
+        grid-row: 1/span 2;
+        background-color: rgb(65,178,148);
+        margin-bottom: 1rem;
+        background-image: url(https://demo2.cybersoft.edu.vn/static/media/astronaut.3c90d598.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        text-align: left; 
+        height: 100%;
+    /* .content{
+        h3{
+          padding: 15px  20px 0px 20px;
+        }
+        p{
+          padding: 0 20px;
+        }
+        h3{
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+       ul{
+        li{
+          i{
+            margin-right: 10px;
+            font-weight: bolder;
+          }
+            margin-bottom: 10px;
+            padding: 0 -20px;
+            
+        }
+       }
+    } */
+    }
+    .loTrinh {
+      background-color: rgb(246,186,53);
+      /* .content{
+        padding: 20px;
+
+        h3{
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    } */
+    }
+    .heThong {
+      background-color: rgb(92,130,149);
+      /* .content{
+        padding: 20px;
+
+        h3{
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    } */
+      
+    }
+    .giangVien {
+        background-color: rgb(246,186,53);
+        /* .content{
+            padding: 20px;
+
+            h3{
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+        } */
+    }
+    .chungNhan {
+      background-color: rgb(99,192,168);
+      /* .content{
+        padding: 20px;
+
+        h3{
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    } */
+        
+    }
+  }
+}
+@keyframes di-chuyen {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: 40%; /* Di chuyển đến cuối ảnh A trừ đi kích thước ảnh B */
+    opacity: 0;
+  }
+}
+
+
+/* animation vLearning */
+@keyframes typing {
+    100%{
+      left: 100%;
+      margin:  0 -35px  0 35px;
+    }
+
+    
+}
