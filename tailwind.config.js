@@ -1,4 +1,5 @@
 const { BorderColor, BorderRight } = require('@mui/icons-material');
+const { default: zIndex } = require('@mui/material/styles/zIndex');
 const { transform } = require('next/dist/build/swc');
 
 /** @type {import('tailwindcss').Config} */
@@ -10,6 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow:{
+        'box':'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px'
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -24,6 +28,7 @@ module.exports = {
         "typewriter": 'typewriter 3s steps(12) 1s infinite',
         'cloud-move': 'floatRight 5s linear infinite',
         "swing": 'swing 4s linear infinite',
+       
       },
       keyframes: {
         caret : {
@@ -48,12 +53,14 @@ module.exports = {
           '75%': { transform: 'rotate(-30deg)', transformOrigin: 'bottom center' },
           '100%': { transform: 'rotate(0deg)', transformOrigin: 'bottom center' },
         },
+        
       }
       
     },
   },
   plugins: [
     function ({ addUtilities }) {
+      
       const newUtilities = {
         '.text-shadow': {
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
@@ -67,6 +74,26 @@ module.exports = {
         '.text-shadow-none': {
           textShadow: 'none',
         },
+        '.custom-after::after':{
+          content:'""',
+          position:"absolute",
+          height: "100%",
+          width: '30px',
+          background: '#ef4444',
+          clipPath:'polygon(100% 0, 75% 50%, 100% 100%, 25% 100%, 25% 54%, 25% 0%)',
+          top: "0",
+          right: "-20px",
+        },
+        '.custom-before::before':{
+          content:'""',
+          position:"absolute",
+          height: "40%",
+          width: '30px',
+          background: '#ef4444',
+          clipPath:'polygon(50% 0%, 20% 0, 48% 100%)',
+          bottom: "-43%",
+          left: "-5px",
+        }
       };
 
       addUtilities(newUtilities, ['responsive', 'hover']);

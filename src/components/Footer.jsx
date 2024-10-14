@@ -7,7 +7,7 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 function Footer() {
   return (
-    <div className='footer'>
+    <footer className='footer'>
       <div className='container flex text-lg '>
           <div className='contact flex flex-col gap-4 w-1/4'>
               <a href="#" className='font-bold relative text-3xl text-shadow-custom'>
@@ -59,7 +59,7 @@ function Footer() {
               </div>
           </div>
       </div>
-    </div>
+    </footer>
   )
 }
 
