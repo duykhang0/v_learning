@@ -30,8 +30,8 @@ body {
   padding: 0;
 }
 .container {
-  width: 100vw;
-  /* padding: 10px 50px; */
+
+  padding: 10px 50px;
 
   /* carousel */
   .content {
