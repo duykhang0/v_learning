@@ -1,11 +1,35 @@
+"use client"
 // Import icon material
 import CheckIcon from '@mui/icons-material/Check';
 import StarIcon from '@mui/icons-material/Star';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+
+// react hook
+import { useSelector,useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getDanhSachKhoaHocThunk } from '@/redux/reducers/khoaHocReducer';
+import KhoaHocLienQuan from '@/components/KhoaHocLienQuan';
+import { getDanhSachNguoiDungThunk } from '@/redux/reducers/nguoiDungReducer';
+import User from '@/components/User';
 export default function Home() {
+    const dispatch = useDispatch()
+    const {danhSachKhoaHoc} = useSelector(state => state.khoaHocReducer);
+    const {danhSachNguoiDung} = useSelector(state => state.nguoiDungReducer)
+    
+    const danhSachGiangVien = danhSachNguoiDung.filter(item => item.maLoaiNguoiDung === 'GV');
+   
+
+    ////----------------------------
+    const getDanhSachKhoaHocAPI = async () => { 
+        dispatch(getDanhSachKhoaHocThunk());
+    }
+    const getDanhSachNguoiDung = async () => {
+        dispatch(getDanhSachNguoiDungThunk());
+    }
+    // useEffect
+    useEffect(() => {
+        getDanhSachKhoaHocAPI()
+        getDanhSachNguoiDung()
+    },[])
   return (
    <div className="home mb-3">
         <div className='carousel container h-screen flex items-center justify-between'>
@@ -69,11 +93,13 @@ export default function Home() {
         </div>
         <div className='khoa_hoc_pho_bien container'>
             <h1 className='my-10 text-yellow-500 font-semibold text-lg'>Khóa học phổ biến</h1>
-            <div className='container_box'>
-                <div className='box w-[280px] shadow-box relative hover:-translate-y-1 transition duration-300  '>
-                    <img src="https://i.pinimg.com/control/564x/7e/84/b3/7e84b305d081b8669dffbb84b4b4efca.jpg" alt="" className='h-[185px] w-full object-contain' />
+            <div className='container_box flex justify-between' >
+                {danhSachKhoaHoc.slice(10,14).map((item,index) => {
+                    return  (
+                        <div className='box w-[280px] shadow-box relative hover:-translate-y-1 transition duration-300  ' key={index}>
+                    <img src={item.hinhAnh}alt="" className='h-[185px] w-full object-contain' />
                     <div className='px-3'>
-                    <h1 className='title text-base font-semibold my-4'>Lập trình hiện đang là xu hướng của cả thế giới</h1>
+                    <h1 className='title text-base font-semibold my-4'>{item.tenKhoaHoc}</h1>
                     <div className='author flex items-center gap-2 text-gray-500 mb-4'>
                         <img src="https://i.pinimg.com/control/564x/94/47/36/9447365f451b94fd53c2ac2a91d8c39f.jpg" alt="avatar" className='w-[40px] h-[40px] object-cover rounded-[50%]'/>
                         <span className='name'>name</span>
@@ -91,66 +117,13 @@ export default function Home() {
                     </div>
                     <h1 className='bg-primary_tailwind text-white w-max p-2 absolute left-0 top-[45%]'>Javascript</h1>
                 </div>
+                    )
+                })}
+                
             </div>
         </div>
-        <div className='khoa_hoc_tham_khao container'>
-            <h1 className='my-10 font-semibold text-lg' >Khóa học tham khảo</h1>
-            <div className='container_box'>
-                <div className='box w-[280px] shadow-box relative hover:-translate-y-1 transition duration-300  '>
-                    <img src="https://i.pinimg.com/control/564x/7e/84/b3/7e84b305d081b8669dffbb84b4b4efca.jpg" alt="" className='h-[185px] w-full object-contain' />
-                    <div className='px-3'>
-                    <h1 className='title text-base font-semibold my-3'>Lập trình hiện đang là xu hướng của cả thế giới</h1>
-                    <div className='time flex justify-between mb-4'>
-                        <div className='flex items-center gap-1'><AccessTimeIcon/>8 giờ</div>
-                        <div className='flex items-center gap-1'><CalendarMonthIcon/>4 tuần</div>
-                        <div className='flex items-center gap-1'><SignalCellularAltIcon/>tất cả</div>
-                    </div>
-                    <div className='author_price flex items-center justify-between py-3'>
-                        <div className="author flex items-center gap-1 text-gray-400">
-                          <img src="https://i.pinimg.com/control/564x/94/47/36/9447365f451b94fd53c2ac2a91d8c39f.jpg" alt="" className='w-[40px] h-[40px] object-cover rounded-[50%]' />My name
-                        </div>
-                        <div className='price relative'>
-                            <h1 className='text-gray-400 line-through text-sm'>800.000 đ</h1>
-                            <h1 className='text-primary_tailwind font-semibold pr-4 '>400.000 đ</h1>
-                            <LocalOfferIcon className='absolute top-[50%] -right-[10px] text-red-500'/>
-                        </div>
-
-                    </div>
-                    </div>
-                    <h1 className='bg-primary_tailwind text-white w-max p-2 absolute left-0 top-[45%]'>Javascript</h1>
-                    <h1 className='bg-red-500 text-white w-max p-2 absolute top-0 -left-[10px] custom-after custom-before'>Yêu thích</h1>
-                </div>
-            </div>
-        </div>
-        <div className='khoa_hoc_frontEnd_react container'>
-            <h1 className='my-10 font-semibold text-lg' >Khóa học Front End React Js</h1>
-            <div className='container_box'>
-                <div className='box w-[280px] shadow-box relative hover:-translate-y-1 transition duration-300  '>
-                    <img src="https://i.pinimg.com/control/564x/7e/84/b3/7e84b305d081b8669dffbb84b4b4efca.jpg" alt="" className='h-[185px] w-full object-contain' />
-                    <div className='px-3'>
-                    <h1 className='title text-base font-semibold my-3'>Lập trình hiện đang là xu hướng của cả thế giới</h1>
-                    <div className='time flex justify-between mb-4'>
-                        <div className='flex items-center gap-1'><AccessTimeIcon/>8 giờ</div>
-                        <div className='flex items-center gap-1'><CalendarMonthIcon/>4 tuần</div>
-                        <div className='flex items-center gap-1'><SignalCellularAltIcon/>tất cả</div>
-                    </div>
-                    <div className='author_price flex items-center justify-between py-3'>
-                        <div className="author flex items-center gap-1 text-gray-400">
-                          <img src="https://i.pinimg.com/control/564x/94/47/36/9447365f451b94fd53c2ac2a91d8c39f.jpg" alt="" className='w-[40px] h-[40px] object-cover rounded-[50%]' />My name
-                        </div>
-                        <div className='price relative'>
-                            <h1 className='text-gray-400 line-through text-sm'>800.000 đ</h1>
-                            <h1 className='text-primary_tailwind font-semibold pr-4 '>400.000 đ</h1>
-                            <LocalOfferIcon className='absolute top-[50%] -right-[10px] text-red-500'/>
-                        </div>
-
-                    </div>
-                    </div>
-                    <h1 className='bg-primary_tailwind text-white w-max p-2 absolute left-0 top-[45%]'>Javascript</h1>
-                    <h1 className='bg-red-500 text-white w-max p-2 absolute top-0 -left-[10px] custom-after custom-before'>Yêu thích</h1>
-                </div>
-            </div>
-        </div>
+        <KhoaHocLienQuan title="Khóa học tham khảo" data = {danhSachKhoaHoc.slice(0,4)}/>
+        <KhoaHocLienQuan title="Khóa học Front End React Js" data = {danhSachKhoaHoc.slice(5,9)}/>
         <div className='boxNumber container'>
             <div className='boxNumberContainer flex justify-around  my-32 '>
 
@@ -176,101 +149,7 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <div className='giang_vien_hang_dau container'>
-            <h1 className='my-10 font-semibold text-lg' >Giảng viên hàng đầu</h1>
-            <div className='boxContainer flex justify-around gap-5' >
-                    <div className='box text-center'>
-                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
-                        <h1 className='font-semibold'>Big DadMoon</h1>
-                        <span>Chuyên gia lĩnh vực lập trình</span>
-                        <div className='rating flex justify-center items-center text-yellow-400 '>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            4.9
-                        </div>
-                        <span className='text-gray-400'> 100 đánh giá</span>
-                    </div>
-                    <div className='box text-center'>
-                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
-                        <h1 className='font-semibold'>Big DadMoon</h1>
-                        <span>Chuyên gia lĩnh vực lập trình</span>
-                        <div className='rating flex justify-center items-center text-yellow-400 '>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            4.9
-                        </div>
-                        <span className='text-gray-400'> 100 đánh giá</span>
-                    </div>
-                    
-                    <div className='box text-center'>
-                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
-                        <h1 className='font-semibold'>Big DadMoon</h1>
-                        <span>Chuyên gia lĩnh vực lập trình</span>
-                        <div className='rating flex justify-center items-center text-yellow-400 '>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            4.9
-                        </div>
-                        <span className='text-gray-400'> 100 đánh giá</span>
-                    </div>
-                    
-                    <div className='box text-center'>
-                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
-                        <h1 className='font-semibold'>Big DadMoon</h1>
-                        <span>Chuyên gia lĩnh vực lập trình</span>
-                        <div className='rating flex justify-center items-center text-yellow-400 '>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            4.9
-                        </div>
-                        <span className='text-gray-400'> 100 đánh giá</span>
-                    </div>
-                    
-                    <div className='box text-center'>
-                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
-                        <h1 className='font-semibold'>Big DadMoon</h1>
-                        <span>Chuyên gia lĩnh vực lập trình</span>
-                        <div className='rating flex justify-center items-center text-yellow-400 '>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            4.9
-                        </div>
-                        <span className='text-gray-400'> 100 đánh giá</span>
-                    </div>
-                    
-                    <div className='box text-center'>
-                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
-                        <h1 className='font-semibold'>Big DadMoon</h1>
-                        <span>Chuyên gia lĩnh vực lập trình</span>
-                        <div className='rating flex justify-center items-center text-yellow-400 '>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarIcon/>
-                            4.9
-                        </div>
-                        <span className='text-gray-400'> 100 đánh giá</span>
-                    </div>
-                    
-                    
-            </div>
-        </div>
+        <User data={danhSachGiangVien.slice(0,6)}/>
         <div className='hoc_vien_xuat_sac container '>
             <div className='grid grid-cols-2 py-20'>
                 <div className='hero relative mx-auto' >
