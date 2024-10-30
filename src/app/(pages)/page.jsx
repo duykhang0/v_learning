@@ -122,6 +122,171 @@ export default function Home() {
                 </div>
             </div>
         </div>
+        <div className='khoa_hoc_frontEnd_react container'>
+            <h1 className='my-10 font-semibold text-lg' >Khóa học Front End React Js</h1>
+            <div className='container_box'>
+                <div className='box w-[280px] shadow-box relative hover:-translate-y-1 transition duration-300  '>
+                    <img src="https://i.pinimg.com/control/564x/7e/84/b3/7e84b305d081b8669dffbb84b4b4efca.jpg" alt="" className='h-[185px] w-full object-contain' />
+                    <div className='px-3'>
+                    <h1 className='title text-base font-semibold my-3'>Lập trình hiện đang là xu hướng của cả thế giới</h1>
+                    <div className='time flex justify-between mb-4'>
+                        <div className='flex items-center gap-1'><AccessTimeIcon/>8 giờ</div>
+                        <div className='flex items-center gap-1'><CalendarMonthIcon/>4 tuần</div>
+                        <div className='flex items-center gap-1'><SignalCellularAltIcon/>tất cả</div>
+                    </div>
+                    <div className='author_price flex items-center justify-between py-3'>
+                        <div className="author flex items-center gap-1 text-gray-400">
+                          <img src="https://i.pinimg.com/control/564x/94/47/36/9447365f451b94fd53c2ac2a91d8c39f.jpg" alt="" className='w-[40px] h-[40px] object-cover rounded-[50%]' />My name
+                        </div>
+                        <div className='price relative'>
+                            <h1 className='text-gray-400 line-through text-sm'>800.000 đ</h1>
+                            <h1 className='text-primary_tailwind font-semibold pr-4 '>400.000 đ</h1>
+                            <LocalOfferIcon className='absolute top-[50%] -right-[10px] text-red-500'/>
+                        </div>
+
+                    </div>
+                    </div>
+                    <h1 className='bg-primary_tailwind text-white w-max p-2 absolute left-0 top-[45%]'>Javascript</h1>
+                    <h1 className='bg-red-500 text-white w-max p-2 absolute top-0 -left-[10px] custom-after custom-before'>Yêu thích</h1>
+                </div>
+            </div>
+        </div>
+        <div className='boxNumber container'>
+            <div className='boxNumberContainer flex justify-around  my-32 '>
+
+                <div className='boxNumberItem  text-center'>
+                      <img src="https://demo2.cybersoft.edu.vn/static/media/003-students.e1a7c67b.png" alt="" className='w-[100px] mx-auto' />
+                      <h1 className='text-5xl my-2 font-semibold text-primary_tailwind'>9000</h1>
+                      <span className='font-semibold'>Học Viên</span>
+                </div>
+                <div className='boxNumberItem text-center'>
+                      <img src="https://demo2.cybersoft.edu.vn/static/media/001-timetable.0e009173.png" alt="" className='w-[100px] mx-auto'/>
+                      <h1 className='text-5xl my-2 font-semibold text-primary_tailwind'>1000</h1>
+                      <span className='font-semibold'>Khóa Học</span>
+                </div>
+                <div className='boxNumberItem text-center'>
+                      <img src="https://demo2.cybersoft.edu.vn/static/media/002-hourglass.548810be.png" alt="" className='w-[100px] mx-auto'/>
+                      <h1 className='text-5xl my-2 font-semibold text-primary_tailwind'>33200</h1>
+                      <span className='font-semibold' >Giờ Học</span>
+                </div>
+                <div className='boxNumberItem text-center'>
+                      <img src="https://demo2.cybersoft.edu.vn/static/media/004-teacher.5bbd6eec.png" alt="" className='w-[100px] mx-auto'/>
+                      <h1 className='text-5xl my-2 font-semibold text-primary_tailwind'>400</h1>
+                      <span className='font-semibold'>Giảng Viên</span>
+                </div>
+            </div>
+        </div>
+        <div className='giang_vien_hang_dau container'>
+            <h1 className='my-10 font-semibold text-lg' >Giảng viên hàng đầu</h1>
+            <div className='boxContainer flex justify-around gap-5' >
+                    <div className='box text-center'>
+                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
+                        <h1 className='font-semibold'>Big DadMoon</h1>
+                        <span>Chuyên gia lĩnh vực lập trình</span>
+                        <div className='rating flex justify-center items-center text-yellow-400 '>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            4.9
+                        </div>
+                        <span className='text-gray-400'> 100 đánh giá</span>
+                    </div>
+                    <div className='box text-center'>
+                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
+                        <h1 className='font-semibold'>Big DadMoon</h1>
+                        <span>Chuyên gia lĩnh vực lập trình</span>
+                        <div className='rating flex justify-center items-center text-yellow-400 '>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            4.9
+                        </div>
+                        <span className='text-gray-400'> 100 đánh giá</span>
+                    </div>
+                    
+                    <div className='box text-center'>
+                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
+                        <h1 className='font-semibold'>Big DadMoon</h1>
+                        <span>Chuyên gia lĩnh vực lập trình</span>
+                        <div className='rating flex justify-center items-center text-yellow-400 '>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            4.9
+                        </div>
+                        <span className='text-gray-400'> 100 đánh giá</span>
+                    </div>
+                    
+                    <div className='box text-center'>
+                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
+                        <h1 className='font-semibold'>Big DadMoon</h1>
+                        <span>Chuyên gia lĩnh vực lập trình</span>
+                        <div className='rating flex justify-center items-center text-yellow-400 '>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            4.9
+                        </div>
+                        <span className='text-gray-400'> 100 đánh giá</span>
+                    </div>
+                    
+                    <div className='box text-center'>
+                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
+                        <h1 className='font-semibold'>Big DadMoon</h1>
+                        <span>Chuyên gia lĩnh vực lập trình</span>
+                        <div className='rating flex justify-center items-center text-yellow-400 '>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            4.9
+                        </div>
+                        <span className='text-gray-400'> 100 đánh giá</span>
+                    </div>
+                    
+                    <div className='box text-center'>
+                        <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
+                        <h1 className='font-semibold'>Big DadMoon</h1>
+                        <span>Chuyên gia lĩnh vực lập trình</span>
+                        <div className='rating flex justify-center items-center text-yellow-400 '>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            <StarIcon/>
+                            4.9
+                        </div>
+                        <span className='text-gray-400'> 100 đánh giá</span>
+                    </div>
+                    
+                    
+            </div>
+        </div>
+        <div className='hoc_vien_xuat_sac container '>
+            <div className='grid grid-cols-2 py-20'>
+                <div className='hero relative mx-auto' >
+                    <div className='h-[220px] w-[230px] bg-pink-400 absolute rounded-custom-radius -z-10'></div>
+                    <img src="https://demo2.cybersoft.edu.vn/static/media/avatarReview.2f5a1f3c.png " alt="" className='w-[200px] h-[200px] ' />
+                </div>
+                <div className='content flex flex-col justify-center '>
+                    
+                    <p ><span className='text-5xl text-pink-400'>"</span>Chương trình giảng dạy được biên soạn dành riêng cho các bạn Lập trình từ trái ngành hoặc đã có kiến thức theo cường độ cao, luôn được tinh chỉnh và tối ưu hóa theo thời gian bởi các thành viên sáng lập và giảng viên dày kinh nghiệm.Thực sự rất hay và hấp dẫn </p>
+                    
+                    <h1 className='text-pink-400'>Nhi Dev</h1>
+                    <span>Học viên xuất sắc</span>
+                </div>
+            </div>
+           
+        </div>
    </div>
   );
 }

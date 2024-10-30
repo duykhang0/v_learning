@@ -1,6 +1,8 @@
 import "@/css/globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Providers from "@/redux/Provider";
+// import redux
 
 
 export const metadata = {
@@ -10,6 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <Providers>
     <html lang="en">
       <body>
          <Header/>
@@ -19,5 +22,6 @@ export default function RootLayout({ children }) {
 
       </body>
     </html>
+    </Providers>
   );
 }
