@@ -24,7 +24,7 @@ function Header() {
               <FlayoutLink href="#" title="Danh Mục" FlyoutContent icon={<MenuIcon/>} childrenMenu={datas.danhmuc}/>
               <FlayoutLink href="#" title="Khóa Học" FlyoutContent/>
               <FlayoutLink href="#" title="Blog" FlyoutContent/>
-              <FlayoutLink href="#" title="Sự Kiện" FlyoutContent childrenMenu={datas.suKien}/>
+              <FlayoutLink href="/sukien" title="Sự Kiện" FlyoutContent childrenMenu={datas.suKien}/>
               <FlayoutLink href="#" title="Thông Tin" FlyoutContent/>
 
              

@@ -110,6 +110,22 @@ body {
   }
 
 
+  /* PAGE THONG TIN */
+  /* carouThongTin */
+  .carouThongTin{
+    .bgThongTin{
+      img{
+        background-size: cover;
+    
+        
+      }
+    }
+    .contentThongTin{
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+
 
 }
 
