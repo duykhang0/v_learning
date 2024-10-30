@@ -11,7 +11,7 @@ function Header() {
   }
   return (
     <div className="header ">
-        <div className="container flex items-center justify-between">
+        <div className="container flex items-center justify-between py-3">
             <div className="logo flex items-center gap-5">
                 <img src="https://demo2.cybersoft.edu.vn/logo.png" alt="logo" width={250} />
                 <div className="search focus-within:border-2 focus-within:border-[#41b294]  p-1 rounded">

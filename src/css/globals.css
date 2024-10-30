@@ -30,8 +30,8 @@ body {
   padding: 0;
 }
 .container {
-  /* width: 100vw; */
-  /* padding: 10px 50px; */
+
+  padding: 10px 50px;
 
   /* carousel */
   .content {
@@ -115,7 +115,7 @@ body {
 
 /* animatedetail */
 @keyframes animatedetail {
-  0%,
+  0%{}
   100% {
     transform: translateY(0); /* Về vị trí ban đầu */
   }
@@ -129,3 +129,23 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* animate */
+.box_glass::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ background: linear-gradient(50deg,transparent 50%,rgba(255,255,255,.1) 60%,rgba(255,255,255,.5) 70%,transparent 71%);
+ background-size: 200% 100%;
+ background-position: 200% 0;
+ transition: .5s;
+}
+.box_glass:hover::after{
+  background-position: -20% 0;
+  cursor: pointer;
+}
+
