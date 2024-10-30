@@ -4,11 +4,9 @@
 @tailwind utilities;
 
 /* bootstrap*/
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
-*{
+* {
   text-decoration: none;
 }
 :root {
@@ -30,15 +28,101 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
-.container{
-  padding: 0 50px;
-  margin: 0 auto;
-  
-}
+.container {
+  width: 100vw;
+  /* padding: 10px 50px; */
+
+  /* carousel */
+  .content {
+    background-image: url("https://demo2.cybersoft.edu.vn/static/media/backroundTech.a989a5f8.jpg");
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: cover;
+    filter: grayscale(50%);
+    .timeEvent {
+      padding: 150px 50px;
+    }
+  }
+  .content::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: url("https://demo2.cybersoft.edu.vn/static/media/high-techbrain.2f38d2ab.png");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: contain;
+  }
+
+  /* detail */
+  .detail {
+    .row {
+      .col-6 {
+        img {
+          object-fit: contain;
+          animation: animatedetail 2s infinite;
+        }
+        h5 {
+          color: #9f1f56;
+        }
+        p {
+          color: #8c8c8c;
+        }
+        .btnJohn:hover {
+          padding-bottom: 10px;
+          cursor: pointer;
+        }
+        .btnDetail:hover {
+          padding-bottom: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  /* founder */
+  .founder {
+    z-index: 1;
+    padding: 50px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://demo2.cybersoft.edu.vn/static/media/lightTech.32807735.jpg");
+  }
+
+  /* sponsors */
+  .sponsors{
+    .row{
+      .general{
+        .itemDonors{
+          img{
+            object-fit: cover;
+            height: 220px;
+            /* min-height: 220px; */
+          }
+        }
+      }
+        
+    }
+  }
 
 
+
+}
+
+/* animatedetail */
+@keyframes animatedetail {
+  0%{}
+  100% {
+    transform: translateY(0); /* Về vị trí ban đầu */
+  }
+  50% {
+    transform: translateY(-20px); /* Di chuyển lên 20px */
+  }
+}
 
 @layer utilities {
   .text-balance {
