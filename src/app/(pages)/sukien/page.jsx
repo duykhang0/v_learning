@@ -4,7 +4,7 @@ const sukien = () => {
   return (
     <div className="container total ">
       {/* carousel */}
-      <div className="content   position-relative ">
+      <div className="content carousel  position-relative ">
         <div className="timeEvent  text-black mx-500 z-3 position-relative ">
           <div className="time_container d-flex   ">
             <div className="time pr-5 lh-lg">
@@ -72,8 +72,8 @@ const sukien = () => {
                 src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg"
                 alt=""
               />
-              <h6 className="py-2">NGUYỄN NHẬT</h6>
-              <p>Ceo TechViet Production</p>
+              <h6 className="py-1 fw-bold">NGUYỄN NHẬT</h6>
+              <p className="pb-2">Ceo TechViet Production</p>
             </div>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6">
@@ -82,8 +82,8 @@ const sukien = () => {
                 src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg"
                 alt=""
               />
-              <h6 className="py-2">NGUYỄN NHẬT</h6>
-              <p>Ceo TechViet Production</p>
+              <h6 className="py-1 fw-bold">NGUYỄN NHẬT</h6>
+              <p className="pb-2">Ceo TechViet Production</p>
             </div>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6">
@@ -92,8 +92,8 @@ const sukien = () => {
                 src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg"
                 alt=""
               />
-              <h6 className="py-2 fw-bold">NGUYỄN NHẬT</h6>
-              <p>Ceo TechViet Production</p>
+              <h6 className="py-1 fw-bold">NGUYỄN NHẬT</h6>
+              <p className="pb-2">Ceo TechViet Production</p>
             </div>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6">
@@ -102,8 +102,8 @@ const sukien = () => {
                 src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg"
                 alt=""
               />
-              <h6 className="py-2 fw-bold">NGUYỄN NHẬT</h6>
-              <p>Ceo TechViet Production</p>
+              <h6 className="py-1 fw-bold">NGUYỄN NHẬT</h6>
+              <p className="pb-2">Ceo TechViet Production</p>
             </div>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6">
@@ -112,8 +112,8 @@ const sukien = () => {
                 src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg"
                 alt=""
               />
-              <h6 className="py-2 fw-bold">NGUYỄN NHẬT</h6>
-              <p>Ceo TechViet Production</p>
+              <h6 className="py-1 fw-bold">NGUYỄN NHẬT</h6>
+              <p className="pb-2">Ceo TechViet Production</p>
             </div>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6">
@@ -122,8 +122,8 @@ const sukien = () => {
                 src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg"
                 alt=""
               />
-              <h6 className="py-2 fw-bold">NGUYỄN NHẬT</h6>
-              <p>Ceo TechViet Production</p>
+              <h6 className="py-1 fw-bold">NGUYỄN NHẬT</h6>
+              <p className="pb-2">Ceo TechViet Production</p>
             </div>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6">
@@ -132,8 +132,8 @@ const sukien = () => {
                 src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg"
                 alt=""
               />
-              <h6 className="py-2 fw-bold">NGUYỄN NHẬT</h6>
-              <p>Ceo TechViet Production</p>
+              <h6 className="py-1 fw-bold">NGUYỄN NHẬT</h6>
+              <p className="pb-2">Ceo TechViet Production</p>
             </div>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6">
@@ -142,8 +142,8 @@ const sukien = () => {
                 src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg"
                 alt=""
               />
-              <h6 className="py-2 fw-bold">NGUYỄN NHẬT</h6>
-              <p>Ceo TechViet Production</p>
+              <h6 className="py-1 fw-bold">NGUYỄN NHẬT</h6>
+              <p className="pb-2">Ceo TechViet Production</p>
             </div>
           </div>
         </div>
@@ -152,20 +152,20 @@ const sukien = () => {
       <div className="sponsors ">
         <h6 className="text-center py-5 text-warning fs-2 fw-bold">NHÀ TÀI TRỢ CHƯƠNG TRÌNH</h6>
         <div className="row text-center">
-          <div class="col-xl-3 col-lg-6 col-md-6 general ">
-            <div class="itemDonors">
+          <div className="col-xl-3 col-lg-6 col-md-6 general ">
+            <div className="itemDonors">
               <img className="w-100 rounded-4" src="https://demo2.cybersoft.edu.vn/static/media/meta.10fa2fa1.jpg" alt="" />
               <p className="lead fw-bold">FACEBOOK</p>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 general">
-            <div class="itemDonors">
+          <div className="col-xl-3 col-lg-6 col-md-6 general">
+            <div className="itemDonors">
               <img className="w-100 rounded-3" src="https://demo2.cybersoft.edu.vn/static/media/microsoft.318b3280.jpg" alt="" />
               <p className="lead fw-bold" >MICROSOFT</p>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 general">
-            <div class="itemDonors">
+          <div className="col-xl-3 col-lg-6 col-md-6 general">
+            <div className="itemDonors">
               <img className="w-100 rounded-3 " src="https://demo2.cybersoft.edu.vn/static/media/Google-logo.f11902b5.jpg" alt="" />
               <p className="lead fw-bold">GOOGLE</p>
             </div>

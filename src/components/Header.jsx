@@ -39,11 +39,19 @@ function Header() {
             </div>
             <div className="menu flex  gap-4 font-semibold text-base">
 
+<<<<<<< HEAD
               <FlayoutLink href="/" title="Danh Mục" FlyoutContent icon={<MenuIcon/>} childrenMenu={datas.danhmuc}/>
               <FlayoutLink href="/khoahoc" title="Khóa Học" FlyoutContent/>
               <FlayoutLink href="/blog" title="Blog" FlyoutContent/>
               <FlayoutLink href="/sukien" title="Sự Kiện" FlyoutContent childrenMenu={datas.suKien}/>
               <FlayoutLink href="thongtin" title="Thông Tin" FlyoutContent/>
+=======
+              <FlayoutLink href="#" title="Danh Mục" FlyoutContent icon={<MenuIcon/>} childrenMenu={datas.danhmuc}/>
+              <FlayoutLink href="#" title="Khóa Học" FlyoutContent/>
+              <FlayoutLink href="#" title="Blog" FlyoutContent/>
+              <FlayoutLink href="/sukien" title="Sự Kiện" FlyoutContent childrenMenu={datas.suKien}/>
+              <FlayoutLink href="#" title="Thông Tin" FlyoutContent/>
+>>>>>>> e8a64057bb58bd0f331ad0ad9b14d917129cb8d0
 
              
             </div>
