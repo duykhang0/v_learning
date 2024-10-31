@@ -6,7 +6,25 @@ import FlayoutLink from './FlayoutLink';
 
 function Header() {
   const datas = {
-    danhmuc: ["LẬP TRÌNH BACKEND","THIẾT KẾ WEB","LẬP TRÌNH DI ĐỘNG","LẬP TRÌNH FRONT END","LẬP TRÌNH FULLSTACK","TƯ DUY LẬP TRÌNH"],
+    danhmuc: [{
+      title: "LẬP TRÌNH BACKEND",
+      href: 'backend'
+    },{
+      title:"THIẾT KẾ WEB",
+      href: "design"
+    },{
+      title:"LẬP TRÌNH DI ĐỘNG",
+      href: "didong"
+    },{
+      title:"LẬP TRÌNH FRONT END",
+      href: "frontend"
+    },{
+      title:"LẬP TRÌNH FULLSTACK",
+      href: "fullstack"
+    },{
+      title:"TƯ DUY LẬP TRÌNH",
+      href: "tuduy"
+    }],
     suKien: ["SỰ KIỆN SALE CUỐI NĂM","SỰ KIỆN GIÁNG SINH ","SỰ KIỆN NOEL"]
   }
   return (
@@ -21,11 +39,11 @@ function Header() {
             </div>
             <div className="menu flex  gap-4 font-semibold text-base">
 
-              <FlayoutLink href="#" title="Danh Mục" FlyoutContent icon={<MenuIcon/>} childrenMenu={datas.danhmuc}/>
-              <FlayoutLink href="#" title="Khóa Học" FlyoutContent/>
-              <FlayoutLink href="#" title="Blog" FlyoutContent/>
-              <FlayoutLink href="#" title="Sự Kiện" FlyoutContent childrenMenu={datas.suKien}/>
-              <FlayoutLink href="#" title="Thông Tin" FlyoutContent/>
+              <FlayoutLink href="/" title="Danh Mục" FlyoutContent icon={<MenuIcon/>} childrenMenu={datas.danhmuc}/>
+              <FlayoutLink href="/khoahoc" title="Khóa Học" FlyoutContent/>
+              <FlayoutLink href="/blog" title="Blog" FlyoutContent/>
+              <FlayoutLink href="/sukien" title="Sự Kiện" FlyoutContent childrenMenu={datas.suKien}/>
+              <FlayoutLink href="thongtin" title="Thông Tin" FlyoutContent/>
 
              
             </div>
