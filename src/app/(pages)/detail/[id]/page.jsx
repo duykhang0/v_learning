@@ -12,18 +12,24 @@ import TheatersIcon from '@mui/icons-material/Theaters';
 import StorageIcon from '@mui/icons-material/Storage';
 import KhoaHocLienQuan from '@/components/KhoaHocLienQuan';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDanhSachKhoaHocThunk } from '@/redux/reducers/khoaHocReducer';
+import { getChiTietKhoaHocThunk, getDanhSachKhoaHocThunk } from '@/redux/reducers/khoaHocReducer';
 function Detail({params}) {
   const {id} = params;
   const dispatch = useDispatch();
   const {danhSachKhoaHoc} = useSelector(state => state.khoaHocReducer)
-
+  const {chiTietKhoaHoc} = useSelector(state => state.khoaHocReducer)
+  console.log("🚀 ~ chiTietKhoaHoc:", chiTietKhoaHoc)
+  
   // call api
   const getDanhSachKhoaHocAPI = async () => {
     dispatch(getDanhSachKhoaHocThunk());
   }
+  const getChiTietKhoaHocApi = async (id) => {
+      dispatch(getChiTietKhoaHocThunk(id))
+  }
   useEffect(() => {
     getDanhSachKhoaHocAPI()
+    getChiTietKhoaHocApi(id)
   },[])
   return (
     <div className='chiTiet'>
@@ -33,7 +39,7 @@ function Detail({params}) {
         </div>
         <div className='thongTinChiTietKhoaHoc container flex gap-2'>
             <div className='left w-2/3'>
-              <h1 className='text-2xl mb-4' >Khóa học niềm tin 123</h1>
+              <h1 className='text-2xl mb-4' >{chiTietKhoaHoc.tenKhoaHoc}</h1>
               <div className='thongTinGiangVien flex gap-40 items-center'>
                   <div className='hero flex gap-2 items-center'>
                     <img src="https://i.pinimg.com/control/564x/94/47/36/9447365f451b94fd53c2ac2a91d8c39f.jpg" alt="" className='w-[40px] h-[40px] object-cover rounded-[50%] ' />
@@ -189,7 +195,7 @@ function Detail({params}) {
               </div>
             </div>
             <div className="right w-1/3 flex flex-col">
-                <img src="https://i.pinimg.com/736x/f2/34/bc/f234bcc00936b7299a6cfe54a27ce716.jpg" alt="" className='h-[200px] w-full object-cover' />
+                <img src={chiTietKhoaHoc.hinhAnh} alt="" className='h-[200px] w-full object-cover' />
                 <p className='text-2xl text-end py-4'><FlashOnIcon/>500.000 đ</p>
                 <button className='border-1 py-1 text-lg text-primary_tailwind border-primary_tailwind'>Đăng Ký</button>
                 <div className='py-2 flex flex-col gap-2'>
