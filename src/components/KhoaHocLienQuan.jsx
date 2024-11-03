@@ -10,9 +10,9 @@ function KhoaHocLienQuan(props) {
     const {title,data} = props;
     const [open,setOpen] = useState(false)
   return (
-    <div className='khoa_hoc_tham_khao container mb-5'>
+    <div className='khoa_hoc_tham_khao container mb-5 '>
             <h1 className='my-10 font-semibold text-lg' >{title}</h1>
-            <div className='container_box flex justify-between relative' >
+            <div className='container_box flex relative justify-stretch flex-wrap gap-24 w-full' >
                 {data.map((item, index) => {
                     
                    return (

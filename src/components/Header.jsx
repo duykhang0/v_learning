@@ -8,22 +8,22 @@ function Header() {
   const datas = {
     danhmuc: [{
       title: "LẬP TRÌNH BACKEND",
-      href: 'backend'
+      href: 'BackEnd'
     },{
       title:"THIẾT KẾ WEB",
-      href: "design"
+      href: "Design"
     },{
       title:"LẬP TRÌNH DI ĐỘNG",
-      href: "didong"
+      href: "DiDong"
     },{
       title:"LẬP TRÌNH FRONT END",
-      href: "frontend"
+      href: "FrontEnd"
     },{
       title:"LẬP TRÌNH FULLSTACK",
-      href: "fullstack"
+      href: "FullStack"
     },{
       title:"TƯ DUY LẬP TRÌNH",
-      href: "tuduy"
+      href: "TuDuy"
     }],
     suKien: [
       {

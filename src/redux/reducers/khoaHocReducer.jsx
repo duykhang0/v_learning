@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     danhSachKhoaHoc : [],
-    chiTietKhoaHoc : {}
+    chiTietKhoaHoc : {},
+    khoaHocTheoDanhMuc: []
 }
 
 const khoaHocReducer = createSlice({
@@ -15,11 +16,14 @@ const khoaHocReducer = createSlice({
         },
         setChiTietKhoaHoc : (state,action) => {
             state.chiTietKhoaHoc = action.payload
+        },
+        setKhoaHocTheoDanhMuc : (state,action) =>{
+            state.khoaHocTheoDanhMuc = action.payload
         }
     }
 })
 
-export const {setDanhSachKhoaHoc,setChiTietKhoaHoc} = khoaHocReducer.actions;
+export const {setDanhSachKhoaHoc,setChiTietKhoaHoc,setKhoaHocTheoDanhMuc} = khoaHocReducer.actions;
 export default khoaHocReducer.reducer
 
 
@@ -50,5 +54,19 @@ export const getChiTietKhoaHocThunk = (id) => {
        const data = res.data.find(item => item.maKhoaHoc === id)
        dispatch(setChiTietKhoaHoc(data))
        
+    }
+}
+
+export const getKhoaHocTheoDanhMucThunk = (danhmuc) => {
+    console.log("danhmuc",danhmuc)
+    return async (dipatch) => {
+        const res = await axios({
+            method: "GET",
+            url : `https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${danhmuc}&MaNhom=GP01`,
+            headers: {
+                'TokenCybersoft': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA3MCIsIkhldEhhblN0cmluZyI6IjIzLzAyLzIwMjUiLCJIZXRIYW5UaW1lIjoiMTc0MDI2ODgwMDAwMCIsIm5iZiI6MTcxMDY5NDgwMCwiZXhwIjoxNzQwNDE2NDAwfQ.4h_n3Y6QkB2Fd9Do7Om2uu2eskXK3qO1JS-Fk_NChQI"
+            }
+        });
+        dipatch(setKhoaHocTheoDanhMuc(res.data))
     }
 }
