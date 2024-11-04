@@ -4,7 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     danhSachKhoaHoc : [],
     chiTietKhoaHoc : {},
-    khoaHocTheoDanhMuc: []
+    khoaHocTheoDanhMuc: [],
+    khoaHocTheoPhanTrang: {}
 }
 
 const khoaHocReducer = createSlice({
@@ -19,11 +20,14 @@ const khoaHocReducer = createSlice({
         },
         setKhoaHocTheoDanhMuc : (state,action) =>{
             state.khoaHocTheoDanhMuc = action.payload
+        },
+        setKhoaHocTheoPhanTrang : (state,action) => {
+            state.khoaHocTheoPhanTrang = action.payload
         }
     }
 })
 
-export const {setDanhSachKhoaHoc,setChiTietKhoaHoc,setKhoaHocTheoDanhMuc} = khoaHocReducer.actions;
+export const {setDanhSachKhoaHoc,setChiTietKhoaHoc,setKhoaHocTheoDanhMuc,setKhoaHocTheoPhanTrang} = khoaHocReducer.actions;
 export default khoaHocReducer.reducer
 
 
@@ -69,4 +73,20 @@ export const getKhoaHocTheoDanhMucThunk = (danhmuc) => {
         });
         dipatch(setKhoaHocTheoDanhMuc(res.data))
     }
+}
+
+export const getDanhSachKhoaHocPhanTrang = (currentPage,pageSize) => {
+    console.log("🚀 ~ pageSize:", pageSize)
+    console.log("🚀 ~ currentPage:", currentPage)
+    return async (dispatch) => {
+        const res = await axios({
+            method: "GET",
+            url : `https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc_PhanTrang?page=${currentPage}&pageSize=${pageSize}&MaNhom=GP01`,
+            headers: {
+                'TokenCybersoft': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA3MCIsIkhldEhhblN0cmluZyI6IjIzLzAyLzIwMjUiLCJIZXRIYW5UaW1lIjoiMTc0MDI2ODgwMDAwMCIsIm5iZiI6MTcxMDY5NDgwMCwiZXhwIjoxNzQwNDE2NDAwfQ.4h_n3Y6QkB2Fd9Do7Om2uu2eskXK3qO1JS-Fk_NChQI"
+            }
+        });
+        dispatch(setKhoaHocTheoPhanTrang(res.data))
+    }
+    
 }

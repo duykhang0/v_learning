@@ -13,7 +13,7 @@ function KhoaHocLienQuan(props) {
     <div className='khoa_hoc_tham_khao container mb-5 '>
             <h1 className='my-10 font-semibold text-lg' >{title}</h1>
             <div className='container_box flex relative justify-stretch flex-wrap gap-24 w-full' >
-                {data.map((item, index) => {
+                {data && data.map((item, index) => {
                     
                    return (
                     <div className='box w-[280px] shadow-box relative hover:-translate-y-1 transition duration-300 cursor-pointer group' key={index}>
