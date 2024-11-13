@@ -11,6 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-custom': 'linear-gradient(to right, #e2e2e2, #c9d6ff)',
+      },
       borderRadius: {
         'custom-radius': '10px 100px 110px', // giá trị tuỳ chỉnh
       },

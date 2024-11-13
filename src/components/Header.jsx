@@ -3,6 +3,7 @@ import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import FlayoutLink from './FlayoutLink';
+import Link from 'next/link';
 
 function Header() {
   const datas = {
@@ -59,7 +60,10 @@ function Header() {
 
              
             </div>
-            <button className='bg-[#f6ba35] p-2 text-white text-sm font-medium hover:scale-95 transiton duration-300'>ĐĂNG NHẬP</button>
+            <Link href={"/login"}> 
+              <button button className='bg-[#f6ba35] p-2 text-white text-sm font-medium hover:scale-95 transiton duration-300'>ĐĂNG NHẬP</button>
+            </Link>
+            
         </div>
     </div>
   )
