@@ -5,7 +5,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 // react hook
 import { useSelector,useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getDanhSachKhoaHocThunk } from '@/redux/reducers/khoaHocReducer';
 import KhoaHocLienQuan from '@/components/KhoaHocLienQuan';
 import { getDanhSachNguoiDungThunk } from '@/redux/reducers/nguoiDungReducer';
@@ -14,6 +14,8 @@ export default function Home() {
     const dispatch = useDispatch()
     const {danhSachKhoaHoc} = useSelector(state => state.khoaHocReducer);
     const {danhSachNguoiDung} = useSelector(state => state.nguoiDungReducer)
+    const [token,setToken] = useState("");
+    console.log("🚀 ~ token:", token)
     
     const danhSachGiangVien = danhSachNguoiDung.filter(item => item.maLoaiNguoiDung === 'GV');
    
@@ -27,6 +29,7 @@ export default function Home() {
     }
     // useEffect
     useEffect(() => {
+
         getDanhSachKhoaHocAPI()
         getDanhSachNguoiDung()
     },[])

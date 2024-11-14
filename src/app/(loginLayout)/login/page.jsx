@@ -10,6 +10,7 @@ function LoginPage() {
     
    
   return (
+    <div>
     <div className={`container ${active && "active"}`} id="container">
         <SignUp/>
         <SignIn/>
@@ -27,6 +28,9 @@ function LoginPage() {
             </div>
             </div>
         </div>
+       
+    </div>
+    
     </div>
 
   )

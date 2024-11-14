@@ -65,8 +65,9 @@ export const dangNhapNguoiDung = (value) => {
                 },
                 data: value
             })
+            return res
         }catch(res){
-
+            throw res
         }
     }
 }
