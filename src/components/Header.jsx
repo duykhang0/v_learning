@@ -1,9 +1,13 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useState } from 'react'
 // Icon material
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import FlayoutLink from './FlayoutLink';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Link from 'next/link';
+import { getCookie ,deleteCookie} from '@/uttil';
 
 function Header() {
   const datas = {
@@ -40,6 +44,20 @@ function Header() {
         href: "#"
       },]
   }
+  const [token,setToken] = useState("");
+  console.log("🚀 ~ token:", token)
+  // get token accessToken
+  const getToken = () => {
+    const token = getCookie("token");
+    setToken(token)
+  }
+  const deleteToken = () => {
+    const token = deleteCookie("token");
+    setToken(token)
+  }
+  useEffect(() => {
+    getToken()
+  },[token])
   return (
     <div className="header ">
         <div className="container flex items-center justify-between py-3">
@@ -60,9 +78,16 @@ function Header() {
 
              
             </div>
-            <Link href={"/login"}> 
-              <button button className='bg-[#f6ba35] p-2 text-white text-sm font-medium hover:scale-95 transiton duration-300'>ĐĂNG NHẬP</button>
-            </Link>
+            {
+              token ? <div className='avatar flex items-center justify-end group'>
+                <Link href={"/profile"}><img src="https://i.pinimg.com/736x/b4/8b/9a/b48b9a62d1414fa9cd865ca1c3519cfb.jpg" alt="" className='w-[50px] h-[50px] rounded-full cursor-pointer'/></Link>
+                <button className='absolute bg-gray-400 text-white rounded-full p-1 text-center hidden group-hover:block  group-hover:translate-x-8 transition-all duration-300 ' onClick={() => deleteToken()}><LogoutIcon/></button>
+              </div> :
+              <Link href={"/login"}> 
+                <button button className='bg-[#f6ba35] p-2 text-white text-sm font-medium hover:scale-95 transiton duration-300'>ĐĂNG NHẬP</button>
+              </Link>
+            }
+            
             
         </div>
     </div>

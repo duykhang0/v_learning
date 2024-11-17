@@ -18,7 +18,7 @@ function DanhMucKhoaHoc({params}) {
     },[])
   return (
     <div className='danhMucKhoaHoc'>
-        <div className='title w-screen bg-yellow-400 text-white p-10'>
+        <div className='title  bg-yellow-400 text-white p-10'>
             <h1 className='text-2xl font-semibold'>KHÓA HỌC THEO DANH MỤC</h1>
             <span className='text-sm'>HÃY CHỌN KHÓA HỌC MONG MUỐN </span>
            

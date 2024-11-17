@@ -10,12 +10,12 @@ import { getDanhSachKhoaHocThunk } from '@/redux/reducers/khoaHocReducer';
 import KhoaHocLienQuan from '@/components/KhoaHocLienQuan';
 import { getDanhSachNguoiDungThunk } from '@/redux/reducers/nguoiDungReducer';
 import User from '@/components/User';
+import { getCookie } from '@/uttil';
 export default function Home() {
     const dispatch = useDispatch()
     const {danhSachKhoaHoc} = useSelector(state => state.khoaHocReducer);
     const {danhSachNguoiDung} = useSelector(state => state.nguoiDungReducer)
-    const [token,setToken] = useState("");
-    console.log("🚀 ~ token:", token)
+  
     
     const danhSachGiangVien = danhSachNguoiDung.filter(item => item.maLoaiNguoiDung === 'GV');
    
@@ -27,11 +27,12 @@ export default function Home() {
     const getDanhSachNguoiDung = async () => {
         dispatch(getDanhSachNguoiDungThunk());
     }
+    
     // useEffect
     useEffect(() => {
 
         getDanhSachKhoaHocAPI()
-        getDanhSachNguoiDung()
+        getDanhSachNguoiDung();
     },[])
   return (
    <div className="home mb-3">
