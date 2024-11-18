@@ -48,8 +48,8 @@ function KhoaHoc() {
     getDanhSachKhoaHoc(currentPage,12)
   },[currentPage])
   return (
-    <div className='khoaHoc'>
-        <div className='title w-screen bg-yellow-400 text-white p-10'>
+    <div className='khoaHoc '>
+        <div className='title  bg-yellow-400 text-white p-10'>
             <h1 className='text-2xl font-semibold'>KHÓA HỌC</h1>
             <span className='text-sm'>Bắt đầu Hành Trình Nào</span>
         </div>

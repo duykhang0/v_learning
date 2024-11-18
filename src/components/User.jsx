@@ -11,7 +11,6 @@ function User(props) {
             <div className='boxContainer flex justify-around gap-5' >
                     {
                         data.map((item,index) => {
-                            console.log("🚀 ~ item:", item)
                             
                             return (    <div className='box text-center' key={index}>
                                 <img src="https://demo2.cybersoft.edu.vn/static/media/instrutor5.2e4bd1e6.jpg" alt="" className='w-[80px] h-[80px] object-cover rounded-full mx-auto'  />
