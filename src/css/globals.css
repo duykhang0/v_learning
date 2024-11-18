@@ -141,19 +141,82 @@ body {
           }
         }
       }
-      .gtDeltailR{
+      .gtDeltailR {
         background: url("https://demo2.cybersoft.edu.vn/static/media/solutions-hero-green-bg.15753edf.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: 50%;
-        img{
+        img {
           height: 350px;
           object-fit: contain;
         }
       }
     }
   }
-}
+
+  /* BLOG PAGE */
+  .titleBlog{
+    padding: 50px;
+  }
+  .blogCarousel{
+    .rowTong{
+      .colTong8{
+        .contentLeft{
+          .carBlog{
+            .cardBlogContent{
+              .imgCardBlog{
+                  img{
+                    height: 302px;
+                    min-height: 302px
+                  }
+              }
+              .timeBlogCourse{
+                .reviewBlog{
+                  .reviewIcon{
+                    
+                  }
+                }
+              }
+              button{
+                width:100px;
+              }
+            }
+          }
+      }
+
+      }
+      
+    }
+     
+    }
+
+      .border-top-custom{
+        border-top: 3px solid green;
+        
+      }
+      .border-bot-custom{
+        border-bottom: 1px solid gray;
+      }
+      .blogRightBox{
+        ul{
+          li:hover{
+            display: inline-block;
+            transform: translateY(-2px);
+            color: green;
+            cursor: default;
+          }
+        }
+        .imgPost{
+          img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+  }
+
 
 /* animatedetail */
 @keyframes animatedetail {
