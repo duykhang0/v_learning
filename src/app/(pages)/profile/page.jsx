@@ -24,7 +24,7 @@ const [openDialog,setOpenDialog] = useState(false);
               <TabsComponent setOpenDialog={setOpenDialog}/>
             </div>
        </div>
-       <div className={`dialog_login h-screen fixed top-0 left-0 right-0 bg-black bg-opacity-50 z-20 ${openDialog ? 'flex' : "hidden"} justify-center transition duration-300 ease-in-out`}  onClick={() => setOpenDialog(false)}>
+       <div className={`dialog_login h-screen fixed top-0 left-0 right-0 bg-black bg-opacity-50 z-20 ${openDialog ? 'flex' : "hidden"} justify-center transition duration-300 ease-in-out`}  >
             <div className="bg-[url('https://demo2.cybersoft.edu.vn/static/media/hornor.a74f5377.gif')] bg-center bg-cover w-1/3 h-max my-auto">
                 <div className='header text-white flex justify-between px-4 py-3 text-xl font-semibold'>
                     <h1>Chỉnh sửa thông tin cá nhân</h1>

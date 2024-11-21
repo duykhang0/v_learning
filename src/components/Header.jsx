@@ -8,8 +8,12 @@ import FlayoutLink from './FlayoutLink';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Link from 'next/link';
 import { getCookie ,deleteCookie} from '@/uttil';
+import { useRouter } from 'next/navigation';
 
 function Header() {
+  const [searchKey,setSearchKey] = useState("");
+  const router = useRouter();
+  console.log("🚀 ~ searchKey:", searchKey)
   const datas = {
     danhmuc: [{
       title: "LẬP TRÌNH BACKEND",
@@ -45,7 +49,6 @@ function Header() {
       },]
   }
   const [token,setToken] = useState("");
-  console.log("🚀 ~ token:", token)
   // get token accessToken
   const getToken = () => {
     const token = getCookie("token");
@@ -55,6 +58,16 @@ function Header() {
     const token = deleteCookie("token");
     setToken(token)
   }
+  const handleSearchChange = (event) => {
+    setSearchKey(event.target.value); // Cập nhật searchKey với giá trị mới từ input
+  };
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      // Chuyển hướng đến trang tìm kiếm với giá trị searchKey
+      router.push(`/search/${searchKey}`);
+    }
+  };
+
   useEffect(() => {
     getToken()
   },[token])
@@ -64,7 +77,7 @@ function Header() {
             <div className="logo flex items-center gap-5">
                 <img src="https://demo2.cybersoft.edu.vn/logo.png" alt="logo" width={250} />
                 <div className="search focus-within:border-2 focus-within:border-[#41b294]  p-1 rounded">
-                    <input type="text" placeholder="Tìm kiếm" className='outline-none ' />
+                    <input type="text" placeholder="Tìm kiếm" className='outline-none ' value={searchKey} onChange={() => handleSearchChange(event) }  onKeyDown={handleKeyDown} />
                     <SearchIcon/>
                 </div>
             </div>
