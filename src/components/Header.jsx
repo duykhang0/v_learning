@@ -64,7 +64,7 @@ function Header() {
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       // Chuyển hướng đến trang tìm kiếm với giá trị searchKey
-      router.push(`/search/${searchKey}`);
+      router.push(`/search?keyword=${searchKey}`);
     }
   };
 
