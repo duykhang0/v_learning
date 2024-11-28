@@ -5,8 +5,11 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import { useRouter } from "next/navigation";
+
 import Link from 'next/link';
 function KhoaHocLienQuan(props) {
+    const router = useRouter();
     const {title,data} = props;
     const [open,setOpen] = useState(false)
   return (
@@ -51,8 +54,8 @@ function KhoaHocLienQuan(props) {
                                     <div className='flex items-center gap-1'><CalendarMonthIcon/>4 tuần</div>
                                     <div className='flex items-center gap-1'><SignalCellularAltIcon/>tất cả</div>
                                 </div>
-                                <button className='text-white bg-primary_tailwind w-full text-xl py-2'>
-                                    <Link href="/detail/[id]" as={`/detail/${item.maKhoaHoc}`}>Xem chi tiết</Link>
+                                <button className='text-white bg-primary_tailwind w-full text-xl py-2' onClick={() =>router.push(`/detail?id=${item.maKhoaHoc}`)}>
+                                   Xem Chi Tiết
                                 </button>
                             </div>
                             }

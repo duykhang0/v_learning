@@ -1,11 +1,12 @@
 "use client"
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React,{ useState } from "react";
 
 const FlayoutLink = (props) => {
     const [open,setOpen] = useState(false)
     const {title,href,FlyoutContent,icon,childrenMenu} = props;
-   
+    const router = useRouter();
    const showFlyout = open && FlyoutContent;
     return (
       <div className='relative h-fit w-fit z-10' onMouseEnter={() =>setOpen(true)} onMouseLeave={() => setOpen(false)}>
@@ -22,7 +23,7 @@ const FlayoutLink = (props) => {
                 <div className="absolute -top-6 left-0 right-0 h-6 bg-transparent"></div>
                 <div className="shadow-xl flex flex-col w-max bg-green-300 ">
                     {childrenMenu && childrenMenu.map((item,index) => {
-                      return (<Link href={`/danhmuckhoahoc/${item.href}`} className=" px-3  hover:text-white  text-left my-1" key={index}>{item.title}</Link>)
+                      return (<a onClick={() => router.push(`/danhmuckhoahoc?danhmuc=${item.href}`)} className=" px-3  hover:text-white  text-left my-1 cursor-pointer"  key={index}>{item.title}</a>)
                     })}
                 </div>
             </div>

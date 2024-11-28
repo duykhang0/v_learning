@@ -13,8 +13,12 @@ import StorageIcon from '@mui/icons-material/Storage';
 import KhoaHocLienQuan from '@/components/KhoaHocLienQuan';
 import { useDispatch, useSelector } from 'react-redux';
 import { getChiTietKhoaHocThunk, getDanhSachKhoaHocThunk } from '@/redux/reducers/khoaHocReducer';
-function Detail({params}) {
-  const {id} = params;
+import { useSearchParams } from 'next/navigation';
+
+
+function Detail() {
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id');
   const dispatch = useDispatch();
   const {danhSachKhoaHoc} = useSelector(state => state.khoaHocReducer)
   const {chiTietKhoaHoc} = useSelector(state => state.khoaHocReducer)
