@@ -81,7 +81,7 @@ function Header() {
                     <SearchIcon/>
                 </div>
             </div>
-            <div className="menu flex  gap-4 font-semibold text-base">
+            <div className="menu  items-center gap-4 font-semibold text-base lg:flex hidden">
 
               <FlayoutLink href="/" title="Danh Mục" FlyoutContent icon={<MenuIcon/>} childrenMenu={datas.danhmuc}/>
               <FlayoutLink href="/khoahoc" title="Khóa Học" FlyoutContent/>
@@ -89,9 +89,7 @@ function Header() {
               <FlayoutLink href="/sukien" title="Sự Kiện" FlyoutContent childrenMenu={datas.suKien}/>
               <FlayoutLink href="thongtin" title="Thông Tin" FlyoutContent/>
 
-             
-            </div>
-            {
+              {
               token ? <div className='avatar flex items-center justify-end group'>
                 <Link href={"/profile"}><img src="https://i.pinimg.com/736x/b4/8b/9a/b48b9a62d1414fa9cd865ca1c3519cfb.jpg" alt="" className='w-[50px] h-[50px] rounded-full cursor-pointer'/></Link>
                 <button className='absolute bg-gray-400 text-white rounded-full p-1 text-center hidden group-hover:block  group-hover:translate-x-8 transition-all duration-300 ' onClick={() => deleteToken()}><LogoutIcon/></button>
@@ -100,6 +98,11 @@ function Header() {
                 <button button className='bg-[#f6ba35] p-2 text-white text-sm font-medium hover:scale-95 transiton duration-300'>ĐĂNG NHẬP</button>
               </Link>
             }
+            </div>
+            <div className='bar'>
+              <MenuIcon/>
+            </div>
+            
             
             
         </div>
