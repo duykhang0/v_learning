@@ -53,8 +53,8 @@ function TabsComponent({setOpenDialog}) {
                   <div className='left w-[60%] flex flex-col gap-2'>
                     <SkillBar skill={"HTML"} level={9} background = {"orange"}/>  
                     <SkillBar skill={"CSS"} level={7} background = {"green"}/>
-                    <SkillBar skill={"JS"} level={8} background = {"yellow"}/>
-                    <SkillBar skill={"REACT"} level={10} background = {"blue"}/>
+                    <SkillBar skill={"JS"} level={8} background = {"blue"}/>
+                    <SkillBar skill={"REACT"} level={10} background = {"yellow"}/>
                   </div>
                   <div className="right  w-[40%] flex justify-between flex-wrap px-3  " >
                       <div className="flex gap-2 h-max w-[45%] bg-primary_tailwind text-white py-3 px-4 rounded-xl justify-center"> 
