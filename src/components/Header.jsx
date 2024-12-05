@@ -99,9 +99,9 @@ function Header() {
               </Link>
             }
             </div>
-            <div className='bar'>
+            {/* <div className='bar'>
               <MenuIcon/>
-            </div>
+            </div> */}
             
             
             

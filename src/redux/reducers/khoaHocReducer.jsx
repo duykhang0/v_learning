@@ -57,6 +57,7 @@ export const getChiTietKhoaHocThunk = (id) => {
         })
        const data = res.data.find(item => item.maKhoaHoc === id)
        dispatch(setChiTietKhoaHoc(data))
+       return data
        
     }
 }
@@ -89,4 +90,52 @@ export const getDanhSachKhoaHocPhanTrang = (currentPage,pageSize) => {
         dispatch(setKhoaHocTheoPhanTrang(res.data))
     }
     
+}
+
+export const themKhoaHoc = (values,token) => {
+    return async (dispatch) => {
+        console.log(values)
+        console.log(token)
+
+        const res = await axios({
+            method : "POST",
+            url: `https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/ThemKhoaHoc`,
+            headers: {
+                'TokenCybersoft': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA3MCIsIkhldEhhblN0cmluZyI6IjIzLzAyLzIwMjUiLCJIZXRIYW5UaW1lIjoiMTc0MDI2ODgwMDAwMCIsIm5iZiI6MTcxMDY5NDgwMCwiZXhwIjoxNzQwNDE2NDAwfQ.4h_n3Y6QkB2Fd9Do7Om2uu2eskXK3qO1JS-Fk_NChQI",
+                'Authorization' : `Bearer ${token}`
+            },
+            data: values
+        })
+        return res.status 
+    }
+}
+
+export const capNhapKhoaHocThunk = (values) => {
+    return async (dispatch) => {
+        const res = await axios({
+            method: "PUT",
+            url: 'https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/CapNhatKhoaHoc',
+            headers: {
+                'TokenCybersoft': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA3MCIsIkhldEhhblN0cmluZyI6IjIzLzAyLzIwMjUiLCJIZXRIYW5UaW1lIjoiMTc0MDI2ODgwMDAwMCIsIm5iZiI6MTcxMDY5NDgwMCwiZXhwIjoxNzQwNDE2NDAwfQ.4h_n3Y6QkB2Fd9Do7Om2uu2eskXK3qO1JS-Fk_NChQI",
+                
+            },
+            data: values
+        })
+        return res.status 
+    }
+}
+export const xoaKhoaHocThunk = (maKhoaHoc,token) => {
+    return async (dispatch) => {
+        const res = await axios({
+            method: "DELETE",
+            url: `https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/XoaKhoaHoc?MaKhoaHoc=${maKhoaHoc}
+`,
+            headers: {
+                'TokenCybersoft': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA3MCIsIkhldEhhblN0cmluZyI6IjIzLzAyLzIwMjUiLCJIZXRIYW5UaW1lIjoiMTc0MDI2ODgwMDAwMCIsIm5iZiI6MTcxMDY5NDgwMCwiZXhwIjoxNzQwNDE2NDAwfQ.4h_n3Y6QkB2Fd9Do7Om2uu2eskXK3qO1JS-Fk_NChQI",
+                'Authorization' : `Bearer ${token}`
+            },
+        })
+         return res
+        
+    }
 }
