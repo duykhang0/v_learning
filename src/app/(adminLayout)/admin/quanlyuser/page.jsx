@@ -4,8 +4,8 @@ import React, { useEffect } from 'react'
 
 
 
-import TableDanhSachNguoiDung from './TableDanhSachNguoiDung';
-import ThemUser from './ThemUser';
+import TableDanhSachNguoiDung from '../../../../components/TableDanhSachNguoiDung';
+import ThemUser from '../../../../components/ThemUser';
 function page() {
  
 
