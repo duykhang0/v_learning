@@ -8,13 +8,6 @@ import TableDanhSachNguoiDung from '../../../../components/TableDanhSachNguoiDun
 import ThemUser from '../../../../components/ThemUser';
 function page() {
  
-
- 
-
-  useEffect(() => {
-    
-    
-  },[])
   return (
     <div className='quanly_khoahoc p-4 '>
         <div className='header flex justify-between'>
