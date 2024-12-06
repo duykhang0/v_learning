@@ -6,15 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 
-function DanhMucKhoaHoc({params}) {
+function DanhMucKhoaHoc() {
   const searchParams = useSearchParams();
   const danhmuc = searchParams.get('danhmuc');
-    // const {danhmuc} = useParams();
-    console.log("🚀 ~ danhmuc:", danhmuc)
     
     const dispatch = useDispatch();
     const {khoaHocTheoDanhMuc} = useSelector(state => state.khoaHocReducer);
-    console.log("🚀 ~ khoaHocTheoDanhMuc:", khoaHocTheoDanhMuc)
 
     const getDanhMucTheoKhoaHoc =  async (danhmuc) => {
         dispatch(getKhoaHocTheoDanhMucThunk(danhmuc))

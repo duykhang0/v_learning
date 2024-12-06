@@ -22,7 +22,6 @@ function Detail() {
   const dispatch = useDispatch();
   const {danhSachKhoaHoc} = useSelector(state => state.khoaHocReducer)
   const {chiTietKhoaHoc} = useSelector(state => state.khoaHocReducer)
-  console.log("🚀 ~ chiTietKhoaHoc:", chiTietKhoaHoc)
   
   // call api
   const getDanhSachKhoaHocAPI = async () => {
