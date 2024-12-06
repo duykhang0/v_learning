@@ -13,7 +13,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   
   return (
-    <Suspense>
     <Providers >
     <html lang="en">
       <body className=" ">
@@ -29,6 +28,5 @@ export default function RootLayout({ children }) {
       </body>
     </html>
     </Providers>
-    </Suspense>
   );
 }
