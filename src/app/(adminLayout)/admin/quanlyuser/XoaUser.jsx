@@ -27,12 +27,13 @@ function XoaUser(props) {
                 handleClose()
                 window.location.reload();
             }else{
-                alert(res.response.data)
-                handleClose()
+              alert(res.response.data)
+              handleClose()
             }
+            return res
             
-        }catch(error){
-            console.log(error)
+        }catch(res){
+            console.log(res)
         }
     
       }

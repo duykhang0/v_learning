@@ -34,19 +34,10 @@ function ThemUser() {
     },
     onSubmit :async (values) => {
         values.maNhom = "GP01";
-        try{
-            const res = await dispatch(themNguoiDungThunk(values,token));
-            console.log(res)
-            if(res.status === 200){
-                alert("thêm Thành công");
-                handleClose();
-                window.location.reload();
-
-            }else{
-                alert(res.response.data);
-            }
-        }catch(error){
-            console.log(error)
+        const res = await dispatch(themNguoiDungThunk(values,token))
+        if(res.status === 200){
+          alert("Thêm Thành công");
+          window.location.reload();
         }
     } , 
     validationSchema: addUserValidate

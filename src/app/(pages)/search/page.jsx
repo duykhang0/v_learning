@@ -9,7 +9,6 @@ import { getDanhSachKhoaHocThunk } from '@/redux/reducers/khoaHocReducer';
 function Search() {
     const dispatch = useDispatch();
     const {danhSachKhoaHoc} = useSelector(state => state.khoaHocReducer);
-    console.log("🚀 ~ danhSachKhoaHoc:", danhSachKhoaHoc)
     const getKhoaHoc = () => {
         dispatch(getDanhSachKhoaHocThunk())
     }

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { http } from "@/uttil";
 
 
 const initialState = {
@@ -32,6 +33,7 @@ export const {setDanhSachNguoiDung,setDanhSachNguoiDungTheoPhanTrang} = nguoiDun
 
 // redux thunk
 export const getDanhSachNguoiDungThunk = () => {
+   
     return async(dispatch) => {
         const res = await axios({
             method: "GET",
@@ -94,8 +96,13 @@ export const getDanhSachNguoiDungTheoPhanTrangThunk = (maNhom = "GP01",page=1,pa
                 },
             })
             dispatch(setDanhSachNguoiDungTheoPhanTrang(res.data))
-        }catch(res){
-            throw res
+            return res.data
+        }catch(error){
+            console.log(error);
+            return {
+                success: false,
+                message: error?.response?.data || 'Có lỗi xảy ra khi xóa người dùng!'
+            };
         }
         
         
@@ -104,6 +111,7 @@ export const getDanhSachNguoiDungTheoPhanTrangThunk = (maNhom = "GP01",page=1,pa
 
 // thêm người dùng 
 export const themNguoiDungThunk = (values,token) => {
+
     return async (dispatch) => {
         try{
             const res = await axios({
@@ -111,13 +119,17 @@ export const themNguoiDungThunk = (values,token) => {
                 url: "https://elearningnew.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung",
                 data: values,
                 headers: {
+                    'Authorization' : `Bearer ${token}`,
                     'TokenCybersoft': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA3MCIsIkhldEhhblN0cmluZyI6IjIzLzAyLzIwMjUiLCJIZXRIYW5UaW1lIjoiMTc0MDI2ODgwMDAwMCIsIm5iZiI6MTcxMDY5NDgwMCwiZXhwIjoxNzQwNDE2NDAwfQ.4h_n3Y6QkB2Fd9Do7Om2uu2eskXK3qO1JS-Fk_NChQI",
-                    'Authorization' : `Bearer ${token}`
                 },
             })
-            return res
+            return res;
         }catch(error){
-            return error
+            console.log(error);
+            return {
+                success: false,
+                message: error?.response?.data || 'Có lỗi xảy ra khi xóa người dùng!'
+            };
         }
         
     }
