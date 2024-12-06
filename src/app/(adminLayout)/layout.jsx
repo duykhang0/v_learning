@@ -3,6 +3,7 @@ import NavAdmin from "@/components/NavAdmin";
 import "@/css/admin.css";
 import Providers from "@/redux/Provider";
 
+import { Suspense } from 'react'
 
 export const metadata = {
   title: "Create Next App",
@@ -12,6 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   
   return (
+    <Suspense>
     <Providers >
     <html lang="en">
       <body className=" ">
@@ -27,5 +29,6 @@ export default function RootLayout({ children }) {
       </body>
     </html>
     </Providers>
+    </Suspense>
   );
 }
